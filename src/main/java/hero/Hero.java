@@ -120,4 +120,5 @@ public abstract class Hero {
                 ", isBoss=" + isBoss +
                 '}';
     }
+
 }

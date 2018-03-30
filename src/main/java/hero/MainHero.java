@@ -14,7 +14,9 @@ public class MainHero {
         arena.addHero(priest);
         arena.addHero(tank1);
 
-
+        assassin.attack(tank);
+        assassin.doSpecialMove(tank);
+        priest.doSpecialMove(tank);
 
         arena.printHeroes();
 

@@ -4,23 +4,16 @@ public class Assassin extends Hero {
 
     public Assassin(String name, Side side) {
         super(name, side);
+            setAttackPoints(super.getAttackPoints() * 2.5);
+        }
 
-    }
-
-    @Override
-    public double getAttackPoints() {
-        return super.getAttackPoints();
-    }
-
-    @Override
-    public void setAttackPoints(double attackPoints) {
-        super.setAttackPoints(attackPoints * 2.5);
-    }
-
-    @Override
+    @Override // enhanced damage
     public void doSpecialMove(Hero hero) {
-
+        if (!this.getSide().equals(hero.getSide())) {
+            hero.setHP(hero.getHP() - this.getAttackPoints() * 1.5);
+        }else{
+            System.out.println("You cannot attack a friendly unit");
+        }
     }
-
 
 }

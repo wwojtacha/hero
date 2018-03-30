@@ -4,21 +4,16 @@ public class Priest extends Hero {
 
     public Priest(String name, Side side) {
         super(name, side);
-    }
-
-    @Override
-    public void setHP(double HP) {
-        super.setHP(HP * 1.5);
-    }
-
-    @Override
-    public double getHP() {
-        return super.getHP();
+        setHP(super.getHP() * 1.5);
     }
 
 
-    @Override
+    @Override // heal friend
     public void doSpecialMove(Hero hero) {
-
+        if (this.getSide().equals(hero.getSide())) {
+            hero.setHP(hero.getHP() + 250);
+        } else {
+            System.out.println("You cannot heal an enemy unit");
+        }
     }
 }
